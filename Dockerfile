@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y -q  wget \
                     php5-gd \
                     libapache2-mod-php5 \
                     postfix \
+                    bsd-mailx \
                     libssl-dev \
                     unzip \
                     && rm -R /var/www/html \
