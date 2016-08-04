@@ -78,5 +78,10 @@ VOLUME /var/backups
 # at that ports need to allow access from firewall if need to access it outside of the server. 
 EXPOSE 80 25
 
+#Copy in BCV-Tools Nagios Config
+ENV NAGIOS_DIR=/usr/local/nagios/etc/
+COPY ./nagios/ $NAGIOS_DIR
+COPY ./postfix-main.cf /etc/postfix/main.cf
+
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
